@@ -1,3 +1,17 @@
 :root {
     --bs-body-font-family: "Ubuntu", sans-serif;
 }
+
+header {
+    background-color: #eee;
+}
+
+nav.navbar {
+    background-color: #eee;
+}
+
+.form-error {
+    min-height: 1rem;
+    line-height: 1rem;
+    color: var(--bs-danger);
+}

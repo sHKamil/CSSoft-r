@@ -14,11 +14,10 @@ function view(String $path, Array $attributes = [], Array $css_array = [], Array
     
     $js = '';
     foreach ($js_array as $js_file_name) {
-        $js .= '<script src="assets/js/' . $js_file_name . '.js"></script>
+        $js .= '<script src="assets/js/' . $js_file_name . '.js" type="module"></script>
         ';
     }
 
-    $bootstrap_js = '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>'; 
     $header = require base_path('assets/components/header.php');
     $navbar = require base_path('assets/components/navbar.php');
     $footer = require base_path('assets/components/footer.php');
