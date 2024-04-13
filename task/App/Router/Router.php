@@ -16,7 +16,6 @@ class Router
             'class' => $class,
             'class_method' => $class_method,
             'method' => $method,
-            // 'authorization' => NULL
         ];
         return $this;
     }
@@ -33,11 +32,14 @@ class Router
     
     public function route($uri)
     {
+        // die(var_dump($this->routes));
         foreach ($this->routes as $route)
         {
-            if($route['uri'] === $uri)
+            if($route['uri'] === $uri && $_SERVER['REQUEST_METHOD'] === $route['method'])
             {
+                
                 if(RequestService::methodVerify($route['method'])) {
+
                     $class = new $route['class']();
                     return call_user_func([$class, $route['class_method']]);
                 }

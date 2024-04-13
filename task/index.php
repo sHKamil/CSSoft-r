@@ -1,5 +1,7 @@
 <?php
-
+function dd($dump) { // For development
+    return die(var_dump($dump));
+}
 const BASE_PATH = __DIR__ . '/';
 require_once 'helpers/base_path.php';
 

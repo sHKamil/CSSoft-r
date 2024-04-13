@@ -6,13 +6,13 @@
         <div class="text-center">
             <h2>Dodaj nową firmę</h2>
         </div>
-        <form id="companyForm">
+        <form id="companyForm" method="POST">
             <label for="company_name" class="form-label">Nazwa Firmy</label>
             <div class="input-group mb-2">
                 <span class="input-group-text">
                     <i class="bi bi-buildings"></i>
                 </span>
-                <input type="text" id="company_name" class="form-control" placeholder="Nazwa firmy" required />
+                <input type="text" name="company_name" id="company_name" class="form-control" placeholder="Nazwa firmy" required />
             </div>
             <div id="name_error" class="form-error"></div>
             <label for="address" class="form-label">Adres:</label>
@@ -20,7 +20,7 @@
                 <span class="input-group-text">
                     <i class="bi bi-geo-alt"></i>
                 </span>
-                <input type="text" id="address" class="form-control" placeholder="Adres" />
+                <input type="text" name="address" id="address" class="form-control" placeholder="Adres" />
             </div>
             <div id="address_error" class="form-error"></div>
             <label for="nip" class="form-label">NIP:</label>
@@ -28,11 +28,11 @@
                 <span class="input-group-text">
                     <i class="bi bi-file-earmark-binary"></i>
                 </span>
-                <input type="number" id="nip" class="form-control" placeholder="NIP" required />
+                <input type="number" name="nip" id="nip" class="form-control" placeholder="NIP" required />
             </div>
             <div id="nip_error" class="form-error"></div>
             <div class="mb-2 mt-5 form-floating">
-                <textarea class="form-control" id="description" style="height: 140px" placeholder="opis"></textarea>
+                <textarea class="form-control" name="description" id="description" style="height: 140px" placeholder="opis"></textarea>
                 <label for="description">Opis działalności</label>
             </div>
             <div id="description_error" class="form-error"></div>
