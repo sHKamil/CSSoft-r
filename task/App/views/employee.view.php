@@ -40,7 +40,7 @@
                 <span class="input-group-text">
                     <i class="bi bi-envelope"></i>
                 </span>
-                <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" required />
+                <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" />
             </div>
             <div id="email_error" class="form-error"></div>
             

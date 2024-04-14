@@ -49,5 +49,4 @@ class CompanyValidator extends AbstractFormValidator {
         if(!self::fieldLenght($description, 1, 1000)) $buffer['description'] = 'Nieprawidłowa liczba znaków.';
         return $buffer;
     }
-
 }

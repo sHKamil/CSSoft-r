@@ -7,8 +7,9 @@ let fields = {
         lenght: {
             min: 1,
             max: 100,
-            zeroIncluded: 1
-        }
+            zeroIncluded: true
+        },
+        required: true
     },
     address: {
         field: document.getElementById('address'),
@@ -16,8 +17,9 @@ let fields = {
         lenght: {
             min: 0,
             max: 100,
-            zeroIncluded: 1
-        }
+            zeroIncluded: true
+        },
+        required: false
     },
     nip: {
         field: document.getElementById('nip'),
@@ -25,8 +27,9 @@ let fields = {
         lenght: {
             min: 10,
             max: 10,
-            zeroIncluded: 0
-        }
+            zeroIncluded: false
+        },
+        required: true
     },
     description: {
         field: document.getElementById('description'),
@@ -34,14 +37,15 @@ let fields = {
         lenght: {
             min: 0,
             max: 1000,
-            zeroIncluded: 1
-        }
+            zeroIncluded: true
+        },
+        required: false
     }
 }
 
 Object.values(fields).forEach(input => {
     input.field.addEventListener('keyup', () => {
-        validateFieldLenght(input.field, input.errorField, input.lenght.min, input.lenght.max, input.lenght.zeroIncluded);
+        validateFieldLenght(input.field, input.errorField, input.lenght.min, input.lenght.max, input.lenght.zeroIncluded, input.required);
     });
 });
 
@@ -49,7 +53,7 @@ companyForm.addEventListener('submit', function(event) {
     event.preventDefault();
     let errors = 0;
     Object.values(fields).forEach(input => {
-        if(validateFieldLenght(input.field, input.errorField, input.lenght.min, input.lenght.max, input.lenght.zeroIncluded) !== true) errors ++;
+        if(validateFieldLenght(input.field, input.errorField, input.lenght.min, input.lenght.max, input.lenght.zeroIncluded, input.required) !== true) errors ++;
     });
     if(errors === 0) companyForm.submit()
 });

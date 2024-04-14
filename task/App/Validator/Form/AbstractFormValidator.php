@@ -11,4 +11,9 @@ abstract class AbstractFormValidator {
 
         return true;
     }
+    
+    public static function validEmail(String $email) : Bool
+    {
+        return filter_var($email, FILTER_VALIDATE_EMAIL);
+    }
 }
