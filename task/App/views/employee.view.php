@@ -43,7 +43,24 @@
                 <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" />
             </div>
             <div id="email_error" class="form-error"></div>
-            
+
+
+            <?php  if(isset($companies) && !empty($companies)) { ?>
+            <label for="id_company" class="form-label">Firma:</label>
+            <div class="mb-2 input-group">
+              <span class="input-group-text">
+                <i class="bi bi-buildings"></i>
+              </span>
+              <select name="id_company" class="form-select" id="id_company">
+                <option value=""></option>
+                <?php foreach ($companies as $company) { ?>
+                    <option value=<?php echo $company['id'] ?>><?php echo $company['nazwa'] ?></option>
+                <?php } ?>
+              </select>
+            </div>
+
+            <?php } ?>
+
             <div class="mb-2 mt-5 form-floating">
                 <textarea class="form-control" name="description" id="description" style="height: 140px" placeholder="opis"></textarea>
                 <label for="description">Opis</label>
