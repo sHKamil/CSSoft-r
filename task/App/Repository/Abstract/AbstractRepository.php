@@ -51,4 +51,15 @@ abstract class AbstractRepository {
             return false;
         }
     }
+
+    public function getByWhere(array $params, string $where){
+        try
+        {
+            $result = $this->db->query("SELECT * FROM " . $this->table . " WHERE $where", $params);
+            return $result;
+        } catch (\PDOException $e) {
+            echo "Insert query failed: " . $e->getMessage();
+        }
+        return false;
+    }
 }
