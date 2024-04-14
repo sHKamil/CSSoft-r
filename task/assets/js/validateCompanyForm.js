@@ -1,4 +1,4 @@
-import { validateLength } from "./validateLenght.js";
+import { validateFieldLenght } from "./validateLenght.js";
 
 let fields = {
     companyName: {
@@ -38,20 +38,9 @@ let fields = {
         }
     }
 }
-let companyForm = document.getElementById('companyForm');
-
-function validateFieldLenght(input, errorField, min, max, zeroIncluded) {
-    let validate = validateLength(input, min, max, zeroIncluded);
-    if(validate !== true) {
-        errorField.innerHTML = validate;
-        return false;
-    }
-    errorField.innerHTML = '';
-    return true;
-}
 
 Object.values(fields).forEach(input => {
-    input.field.addEventListener('change', () => {
+    input.field.addEventListener('keyup', () => {
         validateFieldLenght(input.field, input.errorField, input.lenght.min, input.lenght.max, input.lenght.zeroIncluded);
     });
 });
