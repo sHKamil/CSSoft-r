@@ -35,6 +35,7 @@ services:
       retries: 100
     volumes:
       - mysql:/var/lib/mysql
+      - './.docker/mysql/:/docker-entrypoint-initdb.d/'
     ports:        # only for development
       - 3306:3306 #
     networks:
