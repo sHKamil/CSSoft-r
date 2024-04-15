@@ -2,7 +2,7 @@
 $config = require base_path('config/config.php');
 
 return '
-<footer class="footer mt-auto py-3 bg-light">
+<footer style="background-color: #eee; color: #333;" class="footer mt-auto py-3">
     <div class="container text-muted d-flex justify-content-center align-items-center gap-4 flex-column flex-md-row " bis_skin_checked="1">
         <span>
             Copyright - &copy' . $config['user_initials'] . '

@@ -32,7 +32,6 @@ class Router
     
     public function route($uri)
     {
-        // die(var_dump($this->routes));
         foreach ($this->routes as $route)
         {
             if($route['uri'] === $uri && $_SERVER['REQUEST_METHOD'] === $route['method'])

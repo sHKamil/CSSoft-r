@@ -62,9 +62,9 @@
                                 <span class="mb-3 "><h6 class="mb-0">Data dodania: </h6> <?php echo $employeeWithCompanyName['data_dodania'] ?></span>
                                 <span class="mb-3 "><h6 class="mb-0">Telefon: </h6> <?php echo $employeeWithCompanyName['telefon'] ?></span>
                                 <span class="mb-3 "><h6 class="mb-0">E-mail: </h6> <?php echo $employeeWithCompanyName['email'] ?></span>
-                                <span class="mb-3 "><h6 class="mb-0">Opis: </h6> <?php echo $companyWithEmployee['opis'] ?></span>
-                                <?php if(isset($companyWithEmployee['nazwa_firmy']) && !empty($companyWithEmployee['nazwa_firmy'])){ ?>
-                                <span class="mb-3 "><h6 class="mb-0">Nazwa firmy: </h6> <?php echo $companyWithEmployee['nazwa_firmy'] ?></span>
+                                <span class="mb-3 "><h6 class="mb-0">Opis: </h6> <?php echo $employeeWithCompanyName['opis'] ?></span>
+                                <?php if(isset($employeeWithCompanyName['nazwa_firmy']) && !empty($employeeWithCompanyName['nazwa_firmy'])){ ?>
+                                <span class="mb-3 "><h6 class="mb-0">Nazwa firmy: </h6> <?php echo $employeeWithCompanyName['nazwa_firmy'] ?></span>
                                 <?php } ?>
                             </div>
                         </div>
